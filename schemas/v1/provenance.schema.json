@@ -1,5 +1,5 @@
 {
-  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/provenance.schema.json",
+  "$id": "https://skiredj-prog.github.io/tenir-schemas/schemas/v1/provenance.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Provenance",
   "type": "object",
