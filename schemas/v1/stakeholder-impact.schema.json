@@ -1,5 +1,5 @@
 {
-  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/stakeholder-impact.schema.json",
+  "$id": "https://skiredj-prog.github.io/tenir-schemas/schemas/v1/stakeholder-impact.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "StakeholderImpact",
   "type": "object",
