@@ -1,0 +1,23 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/core-result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CoreResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tau",
+    "tenir",
+    "state"
+  ],
+  "properties": {
+    "tau": {
+      "$ref": "tau-result.schema.json"
+    },
+    "tenir": {
+      "$ref": "tenir-result.schema.json"
+    },
+    "state": {
+      "$ref": "system-state.schema.json"
+    }
+  }
+}

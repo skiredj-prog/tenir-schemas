@@ -1,0 +1,23 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/engine-versions.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EngineVersions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tau_kernel",
+    "tenir_core",
+    "api"
+  ],
+  "properties": {
+    "tau_kernel": {
+      "type": "string"
+    },
+    "tenir_core": {
+      "type": "string"
+    },
+    "api": {
+      "type": "string"
+    }
+  }
+}

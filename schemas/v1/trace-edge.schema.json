@@ -1,0 +1,30 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/trace-edge.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TraceEdge",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "from",
+    "to",
+    "relation"
+  ],
+  "properties": {
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "relation": {
+      "type": "string",
+      "enum": [
+        "SUPPORTS",
+        "DERIVES",
+        "USES",
+        "CONTRADICTS",
+        "QUALIFIES"
+      ]
+    }
+  }
+}

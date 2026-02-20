@@ -1,0 +1,44 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/trace-node.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TraceNode",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "kind",
+    "label",
+    "payload",
+    "confidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{6,64}$"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "INPUT",
+        "ASSUMPTION",
+        "RULE",
+        "COMPUTE",
+        "LLM_SUGGESTION",
+        "SCENARIO",
+        "RECOMMENDATION",
+        "PLUGIN"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "confidence": {
+      "$ref": "confidence.schema.json"
+    }
+  }
+}

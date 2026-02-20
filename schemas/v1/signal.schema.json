@@ -1,0 +1,57 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/signal.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "key",
+    "value",
+    "scale",
+    "provenance",
+    "confidence"
+  ],
+  "properties": {
+    "key": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "value": {
+      "oneOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "boolean"
+        }
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "scale": {
+      "type": "string",
+      "enum": [
+        "ABS",
+        "NORM_0_1",
+        "NORM_0_10",
+        "ORDINAL",
+        "TEXTUAL"
+      ]
+    },
+    "provenance": {
+      "$ref": "provenance.schema.json"
+    },
+    "confidence": {
+      "$ref": "confidence.schema.json"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  }
+}

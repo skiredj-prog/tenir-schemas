@@ -1,0 +1,26 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/confidence.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Confidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "score"
+  ],
+  "properties": {
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "label": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "default": "MEDIUM"
+    }
+  }
+}

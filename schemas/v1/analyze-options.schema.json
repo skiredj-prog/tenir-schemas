@@ -1,0 +1,40 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/analyze-options.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnalyzeOptions",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "language": {
+      "type": "string",
+      "default": "fr",
+      "description": "Output language (BCP-47)"
+    },
+    "include_scenarios": {
+      "type": "boolean",
+      "default": true
+    },
+    "include_recommendations": {
+      "type": "boolean",
+      "default": true
+    },
+    "include_llm_extract": {
+      "type": "boolean",
+      "default": true,
+      "description": "Assistive extraction; never authoritative"
+    },
+    "strict_trace": {
+      "type": "boolean",
+      "default": false,
+      "description": "Reject untraceable claims"
+    },
+    "plugin_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9_.-]{3,64}$"
+      },
+      "default": []
+    }
+  }
+}

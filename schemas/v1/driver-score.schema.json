@@ -1,0 +1,28 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/driver-score.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DriverScore",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "key",
+    "score",
+    "confidence"
+  ],
+  "properties": {
+    "key": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "score": {
+      "type": "number"
+    },
+    "confidence": {
+      "$ref": "confidence.schema.json"
+    },
+    "rationale": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  }
+}

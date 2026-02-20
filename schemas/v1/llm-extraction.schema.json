@@ -1,0 +1,26 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/llm-extraction.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LlmExtraction",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "enabled": {
+      "type": "boolean"
+    },
+    "extracted_signals": {
+      "type": "array",
+      "items": {
+        "$ref": "signal.schema.json"
+      },
+      "default": []
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  }
+}

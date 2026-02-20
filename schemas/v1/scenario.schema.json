@@ -1,0 +1,68 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/scenario.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scenario",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "probability",
+    "horizon",
+    "deltas",
+    "triggers",
+    "impacts"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{6,64}$"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "horizon": {
+      "$ref": "time-window.schema.json"
+    },
+    "deltas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tau_distance",
+        "pressure",
+        "option_preservation"
+      ],
+      "properties": {
+        "tau_distance": {
+          "type": "number"
+        },
+        "pressure": {
+          "type": "number"
+        },
+        "option_preservation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "$ref": "trigger.schema.json"
+      }
+    },
+    "impacts": {
+      "type": "array",
+      "items": {
+        "$ref": "stakeholder-impact.schema.json"
+      }
+    }
+  }
+}

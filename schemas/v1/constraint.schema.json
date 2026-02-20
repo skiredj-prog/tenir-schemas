@@ -1,0 +1,38 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/constraint.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Constraint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type",
+    "statement"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{6,64}$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "INVARIANT_CANDIDATE",
+        "VALUE",
+        "LEGAL",
+        "OPERATIONAL",
+        "ETHICAL"
+      ]
+    },
+    "statement": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "default": 3
+    }
+  }
+}

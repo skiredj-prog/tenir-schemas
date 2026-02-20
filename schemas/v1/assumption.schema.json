@@ -1,0 +1,29 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/assumption.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Assumption",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "statement",
+    "confidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{6,64}$"
+    },
+    "statement": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "confidence": {
+      "$ref": "confidence.schema.json"
+    },
+    "rationale": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  }
+}

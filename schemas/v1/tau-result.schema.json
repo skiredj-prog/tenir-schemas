@@ -1,0 +1,45 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/tau-result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TauResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "distance",
+    "epsilon",
+    "continuity_status",
+    "confidence"
+  ],
+  "properties": {
+    "distance": {
+      "type": "number",
+      "minimum": 0
+    },
+    "epsilon": {
+      "type": "number",
+      "minimum": 0
+    },
+    "continuity_status": {
+      "type": "string",
+      "enum": [
+        "OK",
+        "FRAGILIZED",
+        "BROKEN"
+      ]
+    },
+    "confidence": {
+      "$ref": "confidence.schema.json"
+    },
+    "drivers": {
+      "type": "array",
+      "items": {
+        "$ref": "driver-score.schema.json"
+      },
+      "default": []
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 4000
+    }
+  }
+}

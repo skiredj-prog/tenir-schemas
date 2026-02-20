@@ -1,0 +1,46 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/tenir-result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TenirResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pressure",
+    "drift",
+    "action_window",
+    "option_preservation",
+    "confidence"
+  ],
+  "properties": {
+    "pressure": {
+      "type": "number",
+      "minimum": 0
+    },
+    "drift": {
+      "type": "number",
+      "minimum": 0
+    },
+    "action_window": {
+      "$ref": "time-window.schema.json"
+    },
+    "option_preservation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "confidence": {
+      "$ref": "confidence.schema.json"
+    },
+    "stressors": {
+      "type": "array",
+      "items": {
+        "$ref": "stressor.schema.json"
+      },
+      "default": []
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 4000
+    }
+  }
+}

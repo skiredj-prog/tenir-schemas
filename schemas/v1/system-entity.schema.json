@@ -1,0 +1,36 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/system-entity.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SystemEntity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "scale",
+    "label"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "scale": {
+      "type": "string",
+      "enum": [
+        "INDIVIDUAL",
+        "GROUP",
+        "ORG",
+        "STATE",
+        "CIVILIZATION"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

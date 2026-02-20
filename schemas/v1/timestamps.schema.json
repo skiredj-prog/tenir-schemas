@@ -1,0 +1,16 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/timestamps.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Timestamps",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "created_at"
+  ],
+  "properties": {
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

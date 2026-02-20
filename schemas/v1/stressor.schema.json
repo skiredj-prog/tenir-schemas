@@ -1,0 +1,29 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/stressor.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stressor",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "key",
+    "intensity",
+    "confidence"
+  ],
+  "properties": {
+    "key": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "intensity": {
+      "type": "number",
+      "minimum": 0
+    },
+    "confidence": {
+      "$ref": "confidence.schema.json"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  }
+}

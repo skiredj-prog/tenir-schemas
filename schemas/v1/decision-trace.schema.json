@@ -1,0 +1,73 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/decision-trace.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DecisionTrace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_id",
+    "versions",
+    "entity",
+    "situation",
+    "nodes",
+    "edges",
+    "outputs",
+    "hashes"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string"
+    },
+    "versions": {
+      "$ref": "engine-versions.schema.json"
+    },
+    "entity": {
+      "$ref": "system-entity.schema.json"
+    },
+    "situation": {
+      "$ref": "situation.schema.json"
+    },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "signals": {
+          "type": "array",
+          "items": {
+            "$ref": "signal.schema.json"
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "$ref": "assumption.schema.json"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "$ref": "constraint.schema.json"
+          }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "trace-node.schema.json"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "$ref": "trace-edge.schema.json"
+      }
+    },
+    "outputs": {
+      "$ref": "analyze-response.schema.json"
+    },
+    "hashes": {
+      "$ref": "trace-hashes.schema.json"
+    }
+  }
+}

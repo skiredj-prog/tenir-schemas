@@ -1,0 +1,30 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/stakeholder-impact.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StakeholderImpact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stakeholder",
+    "impact",
+    "reversibility"
+  ],
+  "properties": {
+    "stakeholder": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "impact": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "reversibility": {
+      "type": "string",
+      "enum": [
+        "REVERSIBLE",
+        "PARTIALLY_REVERSIBLE",
+        "IRREVERSIBLE"
+      ]
+    }
+  }
+}

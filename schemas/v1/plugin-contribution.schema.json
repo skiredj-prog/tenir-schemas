@@ -1,0 +1,32 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/plugin-contribution.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PluginContribution",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plugin_id",
+    "version",
+    "added_nodes",
+    "added_outputs"
+  ],
+  "properties": {
+    "plugin_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "added_nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "trace-node.schema.json"
+      },
+      "default": []
+    },
+    "added_outputs": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

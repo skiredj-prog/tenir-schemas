@@ -1,0 +1,52 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/analyze-response.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnalyzeResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_id",
+    "versions",
+    "timestamps",
+    "core"
+  ],
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{16,64}$"
+    },
+    "versions": {
+      "$ref": "engine-versions.schema.json"
+    },
+    "timestamps": {
+      "$ref": "timestamps.schema.json"
+    },
+    "core": {
+      "$ref": "core-result.schema.json"
+    },
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "$ref": "scenario.schema.json"
+      },
+      "default": []
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "$ref": "recommendation.schema.json"
+      },
+      "default": []
+    },
+    "llm_extract": {
+      "$ref": "llm-extraction.schema.json"
+    },
+    "plugin_contributions": {
+      "type": "array",
+      "items": {
+        "$ref": "plugin-contribution.schema.json"
+      },
+      "default": []
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/analyze-request.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnalyzeRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entity",
+    "situation"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128
+    },
+    "entity": {
+      "$ref": "system-entity.schema.json"
+    },
+    "situation": {
+      "$ref": "situation.schema.json"
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "$ref": "signal.schema.json"
+      },
+      "default": []
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "assumption.schema.json"
+      },
+      "default": []
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "constraint.schema.json"
+      },
+      "default": []
+    },
+    "options": {
+      "$ref": "analyze-options.schema.json"
+    }
+  }
+}

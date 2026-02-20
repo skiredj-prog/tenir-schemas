@@ -1,0 +1,43 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/system-state.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SystemState",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "label",
+    "risk"
+  ],
+  "properties": {
+    "label": {
+      "type": "string",
+      "enum": [
+        "STABLE",
+        "TENSE",
+        "KINETIC",
+        "ENTROPIC",
+        "MUTATING"
+      ]
+    },
+    "risk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mutation",
+        "collapse"
+      ],
+      "properties": {
+        "mutation": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "collapse": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}

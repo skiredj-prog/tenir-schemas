@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: TENIR Engine API
+  version: 1.0.0
+servers:
+  - url: https://api.tenir.example.com
+security:
+  - bearerAuth: []
+paths:
+  /v1/analyze:
+    post:
+      summary: Analyze a situation for a given system entity and return TAU/TENIR outputs + trace reference
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ../schemas/v1/analyze-request.schema.json
+      responses:
+        "200":
+          description: Analysis result
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/v1/analyze-response.schema.json
+  /v1/trace/{trace_id}:
+    get:
+      summary: Fetch full decision trace (audit graph) for an analysis
+      parameters:
+        - name: trace_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Decision trace document
+          content:
+            application/json:
+              schema:
+                $ref: ../schemas/v1/decision-trace.schema.json
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

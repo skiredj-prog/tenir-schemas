@@ -1,0 +1,26 @@
+{
+  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/trace-hashes.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TraceHashes",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_sha256",
+    "inputs_sha256",
+    "outputs_sha256"
+  ],
+  "properties": {
+    "trace_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "inputs_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "outputs_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}
