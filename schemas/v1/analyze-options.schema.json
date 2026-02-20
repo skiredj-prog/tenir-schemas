@@ -1,5 +1,5 @@
 {
-  "$id": "https://USERNAME.github.io/tenir-schemas/schemas/v1/analyze-options.schema.json",
+  "$id": "https://skiredj_prog.github.io/tenir-schemas/schemas/v1/analyze-options.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "AnalyzeOptions",
   "type": "object",
